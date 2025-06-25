@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Posts - TaskMaster Pro</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="../css/styles.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"><i class="fas fa-tasks"></i> TaskMaster Pro</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"><i class="fas fa-check-circle"></i> Todo Manager</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="blog.html"><i class="fas fa-blog"></i> Blog Posts</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main class="container py-4">
+        <section class="mb-5">
+            <h2 class="mb-3"><i class="fas fa-blog"></i> Blog Posting</h2>
+            <form id="blogForm" class="row g-2 align-items-center mb-4">
+                <div class="col-md-4">
+                    <input type="text" id="blogTitle" class="form-control" placeholder="Blog Title" required>
+                </div>
+                <div class="col-md-6">
+                    <input type="text" id="blogTags" class="form-control" placeholder="Tags (comma separated)">
+                </div>
+                <div class="col-md-12 mt-2">
+                    <textarea id="blogContent" class="form-control" rows="4" placeholder="Write your blog post here..." required></textarea>
+                </div>
+                <div class="col-md-2 mt-2 d-grid">
+                    <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Publish</button>
+                </div>
+            </form>
+            <div class="mb-3">
+                <input type="text" id="searchInput" class="form-control" placeholder="Search posts by title or tag...">
+            </div>
+            <div id="blogList"></div>
+            <div id="blogModal" class="modal fade" tabindex="-1">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalTitle"></h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div id="modalTags" class="mb-2"></div>
+                            <div id="modalContent"></div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-warning" id="editPostBtn">Edit</button>
+                            <button type="button" class="btn btn-danger" id="deletePostBtn">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/blog.js"></script>
+</body>
+</html>
